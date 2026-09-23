@@ -1,0 +1,56 @@
+# Operating System Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Environment and Secrets
+.env
+*.env.local
+*.env.development.local
+*.env.test.local
+*.env.production.local
+
+# IDE & Editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+*.sublime-project
+*.sublime-workspace
+
+# Node / Frontend
+node_modules/
+frontend/dist/
+frontend/build/
+frontend/coverage/
+.npm
+.eslintcache
+
+# Java / Gradle / Backend
+backend/.gradle/
+backend/build/
+backend/out/
+backend/bin/
+backend/.settings/
+backend/.classpath
+backend/.project
+
+# Python / ML Service
+ml-service/__pycache__/
+ml-service/*.pyc
+ml-service/*$py.class
+ml-service/.venv/
+ml-service/env/
+ml-service/venv/
+ml-service/.pytest_cache/
+ml-service/*.egg-info/
+ml-service/.coverage
+ml-service/htmlcov/
+
+# Research Artifacts & Cache
+research/.ipynb_checkpoints/
+research/**/__pycache__/
+
+# Docker & Logs
+*.log
+docker/volumes/
