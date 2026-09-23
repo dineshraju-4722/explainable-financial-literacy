@@ -1,8 +1,10 @@
 package com.financialliteracy.controller;
 
+import com.financialliteracy.dto.analytics.AssessmentAnalyticsResponse;
 import com.financialliteracy.dto.assessment.*;
 import com.financialliteracy.dto.common.ApiResponse;
 import com.financialliteracy.dto.question.QuestionResponse;
+import com.financialliteracy.service.AssessmentAnalyticsService;
 import com.financialliteracy.service.AssessmentCompletionService;
 import com.financialliteracy.service.AssessmentResponseService;
 import com.financialliteracy.service.AssessmentService;
@@ -23,6 +25,7 @@ public class AssessmentController {
     private final AssessmentService assessmentService;
     private final AssessmentResponseService assessmentResponseService;
     private final AssessmentCompletionService assessmentCompletionService;
+    private final AssessmentAnalyticsService assessmentAnalyticsService;
 
     @PostMapping
     public ResponseEntity<ApiResponse<AssessmentResponseDTO>> createAssessment(@Valid @RequestBody CreateAssessmentRequest request) {
@@ -58,5 +61,11 @@ public class AssessmentController {
     public ResponseEntity<ApiResponse<AssessmentResultResponse>> getAssessmentResult(@PathVariable UUID id) {
         AssessmentResultResponse result = assessmentCompletionService.getAssessmentResult(id);
         return ResponseEntity.ok(ApiResponse.success(result));
+    }
+
+    @GetMapping("/{id}/analytics")
+    public ResponseEntity<ApiResponse<AssessmentAnalyticsResponse>> getAssessmentAnalytics(@PathVariable UUID id) {
+        AssessmentAnalyticsResponse analytics = assessmentAnalyticsService.getAssessmentAnalytics(id);
+        return ResponseEntity.ok(ApiResponse.success(analytics));
     }
 }

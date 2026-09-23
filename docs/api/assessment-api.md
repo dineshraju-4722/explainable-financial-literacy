@@ -141,3 +141,86 @@ Error responses return HTTP 400, 404, 409, or 500 status codes:
     "calculatedAt": "2026-09-23T10:40:00Z"
   }
   ```
+
+---
+
+## 5. Assessment Analytics & Feature Engineering (`/api/assessments/{id}/analytics`)
+
+### Retrieve Assessment Analytics
+- **`GET /api/assessments/{id}/analytics`**
+- **State Validation**: Valid only for completed assessments (`status = COMPLETED`). Rejects `IN_PROGRESS` or `ABANDONED` assessments with `409 CONFLICT`.
+- **Response Body**:
+  ```json
+  {
+    "success": true,
+    "message": "Operation completed successfully",
+    "data": {
+      "assessmentId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+      "userId": "1a2b3c4d-5717-4562-b3fc-2c963f66afa6",
+      "assessmentType": "INITIAL",
+      "status": "COMPLETED",
+      "totalQuestions": 3,
+      "answeredQuestions": 3,
+      "correctAnswers": 2,
+      "incorrectAnswers": 1,
+      "overallPercentage": 66.67,
+      "proficiencyLevel": "INTERMEDIATE",
+      "categoryAnalytics": [
+        {
+          "category": "BUDGETING",
+          "totalQuestions": 1,
+          "correctAnswers": 1,
+          "incorrectAnswers": 0,
+          "categoryScore": 1.0,
+          "percentage": 100.0
+        },
+        {
+          "category": "SAVING",
+          "totalQuestions": 2,
+          "correctAnswers": 1,
+          "incorrectAnswers": 1,
+          "categoryScore": 1.0,
+          "percentage": 50.0
+        }
+      ],
+      "difficultyAnalytics": [
+        {
+          "difficulty": "BEGINNER",
+          "totalQuestions": 1,
+          "correctAnswers": 1,
+          "incorrectAnswers": 0,
+          "percentage": 100.0
+        },
+        {
+          "difficulty": "INTERMEDIATE",
+          "totalQuestions": 2,
+          "correctAnswers": 1,
+          "incorrectAnswers": 1,
+          "percentage": 50.0
+        }
+      ],
+      "featureVector": {
+        "overallPercentage": 66.67,
+        "totalQuestions": 3,
+        "answeredQuestions": 3,
+        "correctAnswers": 2,
+        "incorrectAnswers": 1,
+        "proficiencyLevel": "INTERMEDIATE",
+        "assessmentType": "INITIAL",
+        "completionStatus": "COMPLETED",
+        "categoryFeatures": {
+          "BUDGETING": { "questionCount": 1, "correctCount": 1, "percentage": 100.0 },
+          "SAVING": { "questionCount": 2, "correctCount": 1, "percentage": 50.0 },
+          "CREDIT": { "questionCount": 0, "correctCount": 0, "percentage": null }
+        },
+        "difficultyFeatures": {
+          "BEGINNER": { "questionCount": 1, "correctCount": 1, "percentage": 100.0 },
+          "INTERMEDIATE": { "questionCount": 2, "correctCount": 1, "percentage": 50.0 },
+          "ADVANCED": { "questionCount": 0, "correctCount": 0, "percentage": null }
+        }
+      }
+    },
+    "timestamp": "2026-09-23T10:40:00Z"
+  }
+  ```
+
