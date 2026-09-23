@@ -13,15 +13,11 @@ java {
     }
 }
 
-configurations {
-    compileOnly {
-        extendsFrom annotationProcessor
-    }
-}
-
 repositories {
     mavenCentral()
 }
+
+ext['flyway.version'] = '10.8.0'
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
@@ -30,14 +26,45 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
     
     implementation 'org.flywaydb:flyway-core'
-    implementation 'org.flywaydb:flyway-database-postgresql'
+    implementation 'org.flywaydb:flyway-database-postgresql:10.8.0'
     
     runtimeOnly 'org.postgresql:postgresql'
     
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
+    testCompileOnly 'org.projectlombok:lombok'
+    testAnnotationProcessor 'org.projectlombok:lombok'
     
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'com.h2database:h2'
+}
+
+sourceSets {
+    model {
+        java {
+            srcDir 'src/main/java'
+            include '**/enums/**', '**/entity/**', '**/dto/**'
+        }
+        compileClasspath += configurations.compileClasspath
+        annotationProcessorPath = configurations.annotationProcessor
+    }
+    main {
+        java {
+            srcDir 'src/main/java'
+            exclude '**/enums/**', '**/entity/**', '**/dto/**'
+        }
+        compileClasspath += sourceSets.model.output + configurations.compileClasspath
+        runtimeClasspath += sourceSets.model.output + configurations.runtimeClasspath
+        annotationProcessorPath = configurations.annotationProcessor
+    }
+    test {
+        java {
+            srcDir 'src/test/java'
+        }
+        compileClasspath += sourceSets.model.output + sourceSets.main.output + configurations.testCompileClasspath
+        runtimeClasspath += sourceSets.model.output + sourceSets.main.output + configurations.testRuntimeClasspath
+        annotationProcessorPath = configurations.testAnnotationProcessor
+    }
 }
 
 tasks.named('test') {
@@ -51,4 +78,3 @@ bootJar {
 jar {
     enabled = false
 }
-
