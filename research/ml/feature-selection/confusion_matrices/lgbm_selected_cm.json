@@ -1,0 +1,35 @@
+{
+  "model": "Phase 6C Selected-Feature LightGBM (TOP_30)",
+  "classes": [
+    "COMPETENT",
+    "OVERCONFIDENT",
+    "UNDERCONFIDENT",
+    "NAIVE"
+  ],
+  "confusion_matrix": [
+    [
+      1029,
+      279,
+      245,
+      90
+    ],
+    [
+      164,
+      404,
+      107,
+      183
+    ],
+    [
+      110,
+      66,
+      231,
+      156
+    ],
+    [
+      26,
+      100,
+      159,
+      406
+    ]
+  ]
+}

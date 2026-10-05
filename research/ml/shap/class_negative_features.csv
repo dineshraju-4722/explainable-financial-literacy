@@ -1,0 +1,61 @@
+class,rank,variable,description,category,mean_negative_shap
+COMPETENT,1,M1_1,Overall Financial Knowledge (Self-Assessment Scale 1-7),Financial Education & Self-Assessment,-0.34174309591770263
+COMPETENT,2,J8,Checking Account Overdraft Frequency,Financial Behavior & Money Management,-0.16408384933277212
+COMPETENT,3,A5_2015,Highest Education Level Completed,Demographics & Socioeconomics,-0.15346183917183745
+COMPETENT,4,A8_2021,Annual Household Income Tier,Demographics & Socioeconomics,-0.14727721666438473
+COMPETENT,5,G25_3,Behind on Student Loan Payments,Credit & Debt Behavior,-0.13092842658906687
+COMPETENT,6,A50A,Gender Identity (Female / Male),Demographics & Socioeconomics,-0.1252645282425908
+COMPETENT,7,A4A_new_w,A4A_new_w,Demographics & Socioeconomics,-0.10835247647042054
+COMPETENT,8,J20,Overall Financial Satisfaction (Scale 1-10),Financial Behavior & Money Management,-0.09396252375886778
+COMPETENT,9,C10_2012,Carried Credit Card Debt Burden,Credit & Debt Behavior,-0.09069467789704767
+COMPETENT,10,A14,Household Income Volatility / Unexpected Drop,Demographics & Socioeconomics,-0.0830846124521715
+COMPETENT,11,B14A_1,Cryptocurrency Ownership Status,Investing & Retirement,-0.08232571613339106
+COMPETENT,12,F2_5,F2_5,Credit & Debt Behavior,-0.07918203089491543
+COMPETENT,13,J2,Spending Behavior Relative to Income,Financial Behavior & Money Management,-0.07449156411993889
+COMPETENT,14,A3Ar_w,Age Category Bracket,Demographics & Socioeconomics,-0.07128321921792258
+COMPETENT,15,J63,Financial Advice Seeking Behavior,Financial Behavior & Money Management,-0.06834286798156625
+OVERCONFIDENT,1,M1_1,Overall Financial Knowledge (Self-Assessment Scale 1-7),Financial Education & Self-Assessment,-0.2872203384261572
+OVERCONFIDENT,2,A14,Household Income Volatility / Unexpected Drop,Demographics & Socioeconomics,-0.21617355137772015
+OVERCONFIDENT,3,J9,J9,Financial Behavior & Money Management,-0.17937228914774977
+OVERCONFIDENT,4,J43,"Confidence in Coming Up with $2,000 in Emergency",Financial Behavior & Money Management,-0.1626461809423746
+OVERCONFIDENT,5,A50A,Gender Identity (Female / Male),Demographics & Socioeconomics,-0.16035833940410807
+OVERCONFIDENT,6,M21_2_2015,M21_2_2015,Financial Education & Self-Assessment,-0.15542783006512395
+OVERCONFIDENT,7,B14A_1,Cryptocurrency Ownership Status,Investing & Retirement,-0.15020701533786543
+OVERCONFIDENT,8,A50B,Ethnicity / Racial Identity,Demographics & Socioeconomics,-0.13934520877826573
+OVERCONFIDENT,9,J8,Checking Account Overdraft Frequency,Financial Behavior & Money Management,-0.1204969655903875
+OVERCONFIDENT,10,J1,Difficulty Covering Monthly Expenses,Financial Behavior & Money Management,-0.11203032799010187
+OVERCONFIDENT,11,A5_2015,Highest Education Level Completed,Demographics & Socioeconomics,-0.10887226609345381
+OVERCONFIDENT,12,E20,Homeowner Status / Mortgage Holding,Investing & Retirement,-0.10108698513636663
+OVERCONFIDENT,13,J32,Financial Stress / Anxiety in Life,Financial Behavior & Money Management,-0.10004491629148242
+OVERCONFIDENT,14,J20,Overall Financial Satisfaction (Scale 1-10),Financial Behavior & Money Management,-0.07931549658589863
+OVERCONFIDENT,15,M20,M20,Financial Education & Self-Assessment,-0.07175614413690556
+UNDERCONFIDENT,1,M1_1,Overall Financial Knowledge (Self-Assessment Scale 1-7),Financial Education & Self-Assessment,-0.22725517627601233
+UNDERCONFIDENT,2,A14,Household Income Volatility / Unexpected Drop,Demographics & Socioeconomics,-0.17974036085160527
+UNDERCONFIDENT,3,J43,"Confidence in Coming Up with $2,000 in Emergency",Financial Behavior & Money Management,-0.17157952015976755
+UNDERCONFIDENT,4,J1,Difficulty Covering Monthly Expenses,Financial Behavior & Money Management,-0.16677966855919227
+UNDERCONFIDENT,5,A50A,Gender Identity (Female / Male),Demographics & Socioeconomics,-0.126323528639594
+UNDERCONFIDENT,6,B60,Unbanked Status / No Checking or Savings Account,Saving & Banking,-0.12371364271892957
+UNDERCONFIDENT,7,A21_2015,Felt Financial Hardship in Past Year,Demographics & Socioeconomics,-0.11662391254173017
+UNDERCONFIDENT,8,P61,P61,Investing & Retirement,-0.09637098620715784
+UNDERCONFIDENT,9,B61,B61,Saving & Banking,-0.07982233439267675
+UNDERCONFIDENT,10,C5_2012,Hardship Withdrawal from Retirement Account,Investing & Retirement,-0.076990138130409
+UNDERCONFIDENT,11,B31,B31,Saving & Banking,-0.07026715697897715
+UNDERCONFIDENT,12,C4_2012,Regular Retirement Account Contributions,Investing & Retirement,-0.062233690500208945
+UNDERCONFIDENT,13,J32,Financial Stress / Anxiety in Life,Financial Behavior & Money Management,-0.05776638148338003
+UNDERCONFIDENT,14,J60_1,J60_1,Financial Behavior & Money Management,-0.05689603899888906
+UNDERCONFIDENT,15,C3_2012,Taxable Stock / Bond Account Holding,Investing & Retirement,-0.05406403332804489
+NAIVE,1,M1_1,Overall Financial Knowledge (Self-Assessment Scale 1-7),Financial Education & Self-Assessment,-0.3180968224638331
+NAIVE,2,J1,Difficulty Covering Monthly Expenses,Financial Behavior & Money Management,-0.24222371350902772
+NAIVE,3,A5_2015,Highest Education Level Completed,Demographics & Socioeconomics,-0.16825253213842684
+NAIVE,4,J43,"Confidence in Coming Up with $2,000 in Emergency",Financial Behavior & Money Management,-0.13209286989280172
+NAIVE,5,G25_5,G25_5,Credit & Debt Behavior,-0.1217340863727059
+NAIVE,6,A50A,Gender Identity (Female / Male),Demographics & Socioeconomics,-0.07519236528224191
+NAIVE,7,G25_1,G25_1,Credit & Debt Behavior,-0.06977658536528943
+NAIVE,8,F2_6,Used Credit Card for Cash Advance,Credit & Debt Behavior,-0.0672293896429873
+NAIVE,9,G25_4,G25_4,Credit & Debt Behavior,-0.06644633562606547
+NAIVE,10,J41_3,Used Payday Loan / Pawn Shop / Rent-to-Own (AFS),Financial Behavior & Money Management,-0.059395979604518645
+NAIVE,11,G23,G23,Credit & Debt Behavior,-0.052939603450522954
+NAIVE,12,J2,Spending Behavior Relative to Income,Financial Behavior & Money Management,-0.051879016465057395
+NAIVE,13,A4A_new_w,A4A_new_w,Demographics & Socioeconomics,-0.048882973869402
+NAIVE,14,F2_3,Paid Minimum Only on Credit Card,Credit & Debt Behavior,-0.04741162624338127
+NAIVE,15,G25_3,Behind on Student Loan Payments,Credit & Debt Behavior,-0.046614883918930324

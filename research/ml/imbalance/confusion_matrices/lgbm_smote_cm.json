@@ -1,0 +1,35 @@
+{
+  "experiment": "LGBM_SMOTE",
+  "classes": [
+    "COMPETENT",
+    "OVERCONFIDENT",
+    "UNDERCONFIDENT",
+    "NAIVE"
+  ],
+  "confusion_matrix": [
+    [
+      1315,
+      154,
+      84,
+      90
+    ],
+    [
+      317,
+      330,
+      30,
+      181
+    ],
+    [
+      211,
+      51,
+      131,
+      170
+    ],
+    [
+      104,
+      106,
+      72,
+      409
+    ]
+  ]
+}

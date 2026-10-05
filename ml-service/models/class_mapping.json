@@ -1,0 +1,14 @@
+{
+  "idx_to_class": {
+    "0": "COMPETENT",
+    "1": "OVERCONFIDENT",
+    "2": "UNDERCONFIDENT",
+    "3": "NAIVE"
+  },
+  "class_to_idx": {
+    "COMPETENT": 0,
+    "OVERCONFIDENT": 1,
+    "UNDERCONFIDENT": 2,
+    "NAIVE": 3
+  }
+}

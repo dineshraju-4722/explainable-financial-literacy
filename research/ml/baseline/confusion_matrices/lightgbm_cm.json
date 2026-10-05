@@ -1,0 +1,35 @@
+{
+  "model": "LightGBM",
+  "classes": [
+    "COMPETENT",
+    "OVERCONFIDENT",
+    "UNDERCONFIDENT",
+    "NAIVE"
+  ],
+  "confusion_matrix": [
+    [
+      1358,
+      141,
+      59,
+      85
+    ],
+    [
+      324,
+      342,
+      31,
+      161
+    ],
+    [
+      232,
+      57,
+      102,
+      172
+    ],
+    [
+      108,
+      105,
+      64,
+      414
+    ]
+  ]
+}

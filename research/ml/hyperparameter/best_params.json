@@ -1,0 +1,13 @@
+{
+  "subsample_freq": 5,
+  "subsample": 0.8,
+  "reg_lambda": 0.0,
+  "reg_alpha": 0.1,
+  "num_leaves": 15,
+  "n_estimators": 250,
+  "min_split_gain": 0.01,
+  "min_child_samples": 30,
+  "max_depth": 8,
+  "learning_rate": 0.05,
+  "colsample_bytree": 0.7
+}

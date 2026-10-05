@@ -63,6 +63,16 @@ public class AssessmentCompletionServiceImpl implements AssessmentCompletionServ
         int totalQuestions = responses.size();
         int correctAnswers = (int) Math.round(result.getTotalScore());
 
+        java.util.Map<String, Double> mlProbas = null;
+        if (result.getMlProbabilitiesJson() != null && !result.getMlProbabilitiesJson().isBlank()) {
+            try {
+                mlProbas = new com.fasterxml.jackson.databind.ObjectMapper().readValue(
+                        result.getMlProbabilitiesJson(),
+                        new com.fasterxml.jackson.core.type.TypeReference<java.util.Map<String, Double>>() {}
+                );
+            } catch (Exception ignored) {}
+        }
+
         return AssessmentResultResponse.builder()
                 .assessmentId(assessment.getId())
                 .totalQuestions(totalQuestions)
@@ -71,6 +81,10 @@ public class AssessmentCompletionServiceImpl implements AssessmentCompletionServ
                 .percentage(result.getPercentage())
                 .proficiencyLevel(result.getProficiencyLevel())
                 .calculatedAt(result.getCalculatedAt().toString())
+                .mlArchetype(result.getMlArchetype() != null ? result.getMlArchetype().name() : null)
+                .mlModelVersion(result.getMlModelVersion())
+                .mlPredictedAt(result.getMlPredictedAt() != null ? result.getMlPredictedAt().toString() : null)
+                .mlProbabilities(mlProbas)
                 .build();
     }
 }

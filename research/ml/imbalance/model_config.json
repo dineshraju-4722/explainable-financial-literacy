@@ -1,0 +1,23 @@
+{
+  "random_state": 42,
+  "split_ratios": {
+    "train": 0.7,
+    "validation": 0.15,
+    "test": 0.15
+  },
+  "target_variable": "financial_literacy_class",
+  "calculated_inverse_frequency_class_weights": {
+    "COMPETENT": 0.5713121168644841,
+    "OVERCONFIDENT": 1.0947888027993002,
+    "UNDERCONFIDENT": 1.6661278052491442,
+    "NAIVE": 1.3586383374689825
+  },
+  "experiments_evaluated": [
+    "LGBM_BASELINE",
+    "LGBM_CLASS_WEIGHTED",
+    "LGBM_RANDOM_OVERSAMPLING",
+    "LGBM_SMOTE"
+  ],
+  "smotenc_status": "NOT_APPLICABLE",
+  "smotenc_reason": "SMOTE-NC is NOT APPLICABLE because all 121 features in the NFCS dataset are nominal categorical variables. imbalanced-learn SMOTE-NC explicitly raises ValueError if 100% of features are categorical (requires continuous numerical features for k-NN Euclidean distance interpolation)."
+}

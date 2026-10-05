@@ -1,0 +1,35 @@
+{
+  "experiment": "LGBM_CLASS_WEIGHTED",
+  "classes": [
+    "COMPETENT",
+    "OVERCONFIDENT",
+    "UNDERCONFIDENT",
+    "NAIVE"
+  ],
+  "confusion_matrix": [
+    [
+      1055,
+      265,
+      238,
+      85
+    ],
+    [
+      171,
+      403,
+      100,
+      184
+    ],
+    [
+      101,
+      68,
+      232,
+      162
+    ],
+    [
+      17,
+      113,
+      153,
+      408
+    ]
+  ]
+}

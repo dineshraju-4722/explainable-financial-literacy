@@ -1,0 +1,35 @@
+{
+  "model": "Phase 6C-R Final Selected Model (TOP_75)",
+  "classes": [
+    "COMPETENT",
+    "OVERCONFIDENT",
+    "UNDERCONFIDENT",
+    "NAIVE"
+  ],
+  "confusion_matrix": [
+    [
+      1064,
+      271,
+      221,
+      87
+    ],
+    [
+      162,
+      423,
+      94,
+      179
+    ],
+    [
+      114,
+      64,
+      231,
+      154
+    ],
+    [
+      23,
+      107,
+      169,
+      392
+    ]
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "random_state": 42,
+  "split_ratios": {
+    "train": 0.7,
+    "validation": 0.15,
+    "test": 0.15
+  },
+  "target_variable": "financial_literacy_class",
+  "excluded_leakage_variables": [
+    "M4",
+    "M6",
+    "M7",
+    "M8",
+    "M9",
+    "M10",
+    "M31",
+    "M50",
+    "NFCSID",
+    "wgt_n2",
+    "wgt_d2",
+    "wgt_s3"
+  ],
+  "predictor_count": 121,
+  "encoded_feature_dim": 673,
+  "models": {
+    "LogisticRegression": {
+      "multi_class": "multinomial",
+      "max_iter": 1000,
+      "random_state": 42
+    },
+    "RandomForestClassifier": {
+      "n_estimators": 100,
+      "random_state": 42,
+      "n_jobs": -1
+    },
+    "LGBMClassifier": {
+      "objective": "multiclass",
+      "num_class": 4,
+      "n_estimators": 100,
+      "learning_rate": 0.05,
+      "max_depth": 6,
+      "random_state": 42
+    }
+  }
+}

@@ -1,0 +1,243 @@
+{
+  "dataset_info": {
+    "raw_observations": 25539,
+    "valid_observations": 25030,
+    "non_substantive_m4_excluded": 509,
+    "predictor_feature_count": 121,
+    "encoded_feature_count": 673,
+    "splits": {
+      "train_count": 17521,
+      "val_count": 3754,
+      "test_count": 3755
+    }
+  },
+  "cv_5fold_training": {
+    "Multinomial Logistic Regression": {
+      "fold_macro_f1_scores": [
+        0.49567436182774566,
+        0.49807857855485804,
+        0.48986043580546873,
+        0.4883697435095337,
+        0.4966608847959769
+      ],
+      "mean_macro_f1": 0.4937288008987166,
+      "std_macro_f1": 0.0038726382108898137
+    },
+    "Random Forest": {
+      "fold_macro_f1_scores": [
+        0.4169071984589342,
+        0.43128891088046506,
+        0.4193365127200932,
+        0.4219763366469571,
+        0.4282364321460551
+      ],
+      "mean_macro_f1": 0.42354907817050097,
+      "std_macro_f1": 0.005407588877626401
+    },
+    "LightGBM": {
+      "fold_macro_f1_scores": [
+        0.484951713589348,
+        0.49958883679942667,
+        0.473568137537992,
+        0.47739627649742966,
+        0.48339433727657843
+      ],
+      "mean_macro_f1": 0.48377986034015497,
+      "std_macro_f1": 0.008904774337683349
+    }
+  },
+  "models": {
+    "Multinomial Logistic Regression": {
+      "validation_metrics": {
+        "accuracy": 0.5724560468833244,
+        "macro_precision": 0.504416793820969,
+        "macro_recall": 0.4877419133440002,
+        "macro_f1": 0.4890455039857893,
+        "weighted_f1": 0.5553673338797901
+      },
+      "test_metrics": {
+        "accuracy": 0.5797603195739015,
+        "macro_precision": 0.5133510638731753,
+        "macro_recall": 0.49772216445844103,
+        "macro_f1": 0.4990977772784927,
+        "weighted_f1": 0.5637253320876568
+      },
+      "test_per_class_metrics": {
+        "COMPETENT": {
+          "precision": 0.6841834106130861,
+          "recall": 0.808277541083384,
+          "f1": 0.7410714285714286
+        },
+        "OVERCONFIDENT": {
+          "precision": 0.48265895953757226,
+          "recall": 0.38927738927738925,
+          "f1": 0.4309677419354839
+        },
+        "UNDERCONFIDENT": {
+          "precision": 0.3978201634877384,
+          "recall": 0.25932504440497334,
+          "f1": 0.3139784946236559
+        },
+        "NAIVE": {
+          "precision": 0.48874172185430464,
+          "recall": 0.5340086830680174,
+          "f1": 0.5103734439834025
+        }
+      },
+      "test_confusion_matrix": [
+        [
+          1328,
+          165,
+          77,
+          73
+        ],
+        [
+          323,
+          334,
+          44,
+          157
+        ],
+        [
+          202,
+          59,
+          146,
+          156
+        ],
+        [
+          88,
+          134,
+          100,
+          369
+        ]
+      ]
+    },
+    "Random Forest": {
+      "validation_metrics": {
+        "accuracy": 0.555673947789025,
+        "macro_precision": 0.48685589072242,
+        "macro_recall": 0.44474568790459534,
+        "macro_f1": 0.429780489608073,
+        "weighted_f1": 0.5113406647420293
+      },
+      "test_metrics": {
+        "accuracy": 0.5608521970705725,
+        "macro_precision": 0.4833262036170738,
+        "macro_recall": 0.4479872237355188,
+        "macro_f1": 0.4281011293535027,
+        "weighted_f1": 0.5117879056778264
+      },
+      "test_per_class_metrics": {
+        "COMPETENT": {
+          "precision": 0.6173647469458988,
+          "recall": 0.8612294583079733,
+          "f1": 0.7191867852604829
+        },
+        "OVERCONFIDENT": {
+          "precision": 0.4921190893169877,
+          "recall": 0.3275058275058275,
+          "f1": 0.3932820153953814
+        },
+        "UNDERCONFIDENT": {
+          "precision": 0.35294117647058826,
+          "recall": 0.05328596802841918,
+          "f1": 0.09259259259259259
+        },
+        "NAIVE": {
+          "precision": 0.4708798017348203,
+          "recall": 0.5499276410998553,
+          "f1": 0.507343124165554
+        }
+      },
+      "test_confusion_matrix": [
+        [
+          1415,
+          114,
+          13,
+          101
+        ],
+        [
+          406,
+          281,
+          11,
+          160
+        ],
+        [
+          303,
+          64,
+          30,
+          166
+        ],
+        [
+          168,
+          112,
+          31,
+          380
+        ]
+      ]
+    },
+    "LightGBM": {
+      "validation_metrics": {
+        "accuracy": 0.5855087906233352,
+        "macro_precision": 0.5154325839470894,
+        "macro_recall": 0.4948508061650303,
+        "macro_f1": 0.4920462659895503,
+        "weighted_f1": 0.5631459165990814
+      },
+      "test_metrics": {
+        "accuracy": 0.5901464713715047,
+        "macro_precision": 0.524469619267441,
+        "macro_recall": 0.5013605514953134,
+        "macro_f1": 0.49722550272580557,
+        "weighted_f1": 0.5656302391327014
+      },
+      "test_per_class_metrics": {
+        "COMPETENT": {
+          "precision": 0.6716122650840751,
+          "recall": 0.8265368228849665,
+          "f1": 0.7410641200545702
+        },
+        "OVERCONFIDENT": {
+          "precision": 0.5302325581395348,
+          "recall": 0.3986013986013986,
+          "f1": 0.4550898203592814
+        },
+        "UNDERCONFIDENT": {
+          "precision": 0.3984375,
+          "recall": 0.1811722912966252,
+          "f1": 0.2490842490842491
+        },
+        "NAIVE": {
+          "precision": 0.49759615384615385,
+          "recall": 0.5991316931982634,
+          "f1": 0.5436638214051215
+        }
+      },
+      "test_confusion_matrix": [
+        [
+          1358,
+          141,
+          59,
+          85
+        ],
+        [
+          324,
+          342,
+          31,
+          161
+        ],
+        [
+          232,
+          57,
+          102,
+          172
+        ],
+        [
+          108,
+          105,
+          64,
+          414
+        ]
+      ]
+    }
+  }
+}

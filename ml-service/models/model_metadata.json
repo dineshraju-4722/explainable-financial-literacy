@@ -1,0 +1,37 @@
+{
+  "model_name": "LightGBM_TOP75_ClassWeighted",
+  "version": "1.0.0",
+  "created_at": "2026-10-04",
+  "dataset": "FINRA NFCS 2024 State Data",
+  "num_observations_train": 17521,
+  "num_observations_test": 3755,
+  "orig_predictors_count": 75,
+  "encoded_features_count": 503,
+  "metrics": {
+    "accuracy": 0.5619,
+    "macro_precision": 0.5189,
+    "macro_recall": 0.5295,
+    "macro_f1": 0.5205,
+    "weighted_f1": 0.5721,
+    "per_class_f1": {
+      "COMPETENT": 0.7079,
+      "OVERCONFIDENT": 0.491,
+      "UNDERCONFIDENT": 0.3615,
+      "NAIVE": 0.5216
+    }
+  },
+  "hyperparameters": {
+    "subsample_freq": 5,
+    "subsample": 0.8,
+    "reg_lambda": 0.0,
+    "reg_alpha": 0.1,
+    "num_leaves": 15,
+    "n_estimators": 250,
+    "min_split_gain": 0.01,
+    "min_child_samples": 30,
+    "max_depth": 8,
+    "learning_rate": 0.05,
+    "colsample_bytree": 0.7
+  },
+  "class_weights": "balanced"
+}

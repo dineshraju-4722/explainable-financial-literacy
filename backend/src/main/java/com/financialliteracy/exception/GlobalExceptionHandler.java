@@ -45,6 +45,37 @@ public class GlobalExceptionHandler {
         return new ResponseEntity<>(error, HttpStatus.CONFLICT);
     }
 
+    @ExceptionHandler(IncompleteFeatureVectorException.class)
+    public ResponseEntity<ErrorResponse> handleIncompleteFeatureVector(IncompleteFeatureVectorException ex) {
+        ErrorResponse error = ErrorResponse.builder()
+                .success(false)
+                .message(ex.getMessage())
+                .errors(ex.getMissingFeatures())
+                .timestamp(Instant.now().toString())
+                .build();
+        return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
+    }
+
+    @ExceptionHandler(MlServiceUnavailableException.class)
+    public ResponseEntity<ErrorResponse> handleMlServiceUnavailable(MlServiceUnavailableException ex) {
+        ErrorResponse error = ErrorResponse.builder()
+                .success(false)
+                .message("ML Prediction Service unavailable: " + ex.getMessage())
+                .timestamp(Instant.now().toString())
+                .build();
+        return new ResponseEntity<>(error, HttpStatus.SERVICE_UNAVAILABLE);
+    }
+
+    @ExceptionHandler(MlServiceException.class)
+    public ResponseEntity<ErrorResponse> handleMlServiceError(MlServiceException ex) {
+        ErrorResponse error = ErrorResponse.builder()
+                .success(false)
+                .message("ML Service Error: " + ex.getMessage())
+                .timestamp(Instant.now().toString())
+                .build();
+        return new ResponseEntity<>(error, HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<ErrorResponse> handleValidationErrors(MethodArgumentNotValidException ex) {
         List<String> errors = new ArrayList<>();

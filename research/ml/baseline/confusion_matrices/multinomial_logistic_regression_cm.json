@@ -1,0 +1,35 @@
+{
+  "model": "Multinomial Logistic Regression",
+  "classes": [
+    "COMPETENT",
+    "OVERCONFIDENT",
+    "UNDERCONFIDENT",
+    "NAIVE"
+  ],
+  "confusion_matrix": [
+    [
+      1328,
+      165,
+      77,
+      73
+    ],
+    [
+      323,
+      334,
+      44,
+      157
+    ],
+    [
+      202,
+      59,
+      146,
+      156
+    ],
+    [
+      88,
+      134,
+      100,
+      369
+    ]
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "experiment": "LGBM_RANDOM_OVERSAMPLING",
+  "classes": [
+    "COMPETENT",
+    "OVERCONFIDENT",
+    "UNDERCONFIDENT",
+    "NAIVE"
+  ],
+  "confusion_matrix": [
+    [
+      1054,
+      266,
+      240,
+      83
+    ],
+    [
+      172,
+      398,
+      91,
+      197
+    ],
+    [
+      101,
+      76,
+      229,
+      157
+    ],
+    [
+      19,
+      104,
+      164,
+      404
+    ]
+  ]
+}

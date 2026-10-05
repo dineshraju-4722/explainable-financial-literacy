@@ -1,0 +1,5 @@
+stage,accuracy,macro_f1,weighted_f1,underconfident_f1
+Phase 5 Baseline LightGBM,0.5901,0.4972,0.5656,0.2491
+Phase 6A Class-Weighted LightGBM,0.5587,0.5182,0.5692,0.3608
+Phase 6B Hyperparameter-Optimized LightGBM,0.564,0.5237,0.5735,0.376
+Phase 6C Selected-Feature LightGBM (TOP_30),0.5512649800266312,0.5129852794826933,0.562143743740495,0.35402298850574715

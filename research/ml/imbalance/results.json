@@ -1,0 +1,351 @@
+{
+  "dataset_info": {
+    "raw_observations": 25539,
+    "valid_observations": 25030,
+    "predictor_feature_count": 121,
+    "encoded_feature_count": 673,
+    "train_count": 17521,
+    "val_count": 3754,
+    "test_count": 3755,
+    "calculated_class_weights": {
+      "COMPETENT": 0.5713121168644841,
+      "OVERCONFIDENT": 1.0947888027993002,
+      "UNDERCONFIDENT": 1.6661278052491442,
+      "NAIVE": 1.3586383374689825
+    },
+    "smotenc_status": "NOT_APPLICABLE",
+    "smotenc_reason": "SMOTE-NC is NOT APPLICABLE because all 121 features in the NFCS dataset are nominal categorical variables. imbalanced-learn SMOTE-NC explicitly raises ValueError if 100% of features are categorical (requires continuous numerical features for k-NN Euclidean distance interpolation)."
+  },
+  "cv_results": {
+    "LGBM_BASELINE": {
+      "mean_macro_f1": 0.48377986034015497,
+      "std_macro_f1": 0.008904774337683349,
+      "fold_scores": [
+        0.484951713589348,
+        0.49958883679942667,
+        0.473568137537992,
+        0.47739627649742966,
+        0.48339433727657843
+      ]
+    },
+    "LGBM_CLASS_WEIGHTED": {
+      "mean_macro_f1": 0.5112349218876232,
+      "std_macro_f1": 0.008382593666224479,
+      "fold_scores": [
+        0.5151641875623151,
+        0.5247716823728169,
+        0.5022843357708067,
+        0.511236721691798,
+        0.5027176820403795
+      ]
+    },
+    "LGBM_RANDOM_OVERSAMPLING": {
+      "mean_macro_f1": 0.5078909022561018,
+      "std_macro_f1": 0.010141455330240903,
+      "fold_scores": [
+        0.5075870325908269,
+        0.5251411884128206,
+        0.4933729588058695,
+        0.5054805367428473,
+        0.5078727947281451
+      ]
+    },
+    "LGBM_SMOTE": {
+      "mean_macro_f1": 0.5000125502305652,
+      "std_macro_f1": 0.0051958024863413815,
+      "fold_scores": [
+        0.5018945628542301,
+        0.5047641844171195,
+        0.4898828485525658,
+        0.5020249283050467,
+        0.5014962270238641
+      ]
+    }
+  },
+  "experiments": {
+    "LGBM_BASELINE": {
+      "description": "Baseline LightGBM without class weights or resampling",
+      "training_class_distribution": {
+        "COMPETENT": 7667,
+        "OVERCONFIDENT": 4001,
+        "NAIVE": 3224,
+        "UNDERCONFIDENT": 2629
+      },
+      "validation_metrics": {
+        "accuracy": 0.5855087906233352,
+        "macro_precision": 0.5154325839470894,
+        "macro_recall": 0.4948508061650303,
+        "macro_f1": 0.4920462659895503,
+        "weighted_f1": 0.5631459165990814
+      },
+      "test_metrics": {
+        "accuracy": 0.5901464713715047,
+        "macro_precision": 0.524469619267441,
+        "macro_recall": 0.5013605514953134,
+        "macro_f1": 0.49722550272580557,
+        "weighted_f1": 0.5656302391327014
+      },
+      "test_per_class_metrics": {
+        "COMPETENT": {
+          "precision": 0.6716122650840751,
+          "recall": 0.8265368228849665,
+          "f1": 0.7410641200545702
+        },
+        "OVERCONFIDENT": {
+          "precision": 0.5302325581395348,
+          "recall": 0.3986013986013986,
+          "f1": 0.4550898203592814
+        },
+        "UNDERCONFIDENT": {
+          "precision": 0.3984375,
+          "recall": 0.1811722912966252,
+          "f1": 0.2490842490842491
+        },
+        "NAIVE": {
+          "precision": 0.49759615384615385,
+          "recall": 0.5991316931982634,
+          "f1": 0.5436638214051215
+        }
+      },
+      "test_confusion_matrix": [
+        [
+          1358,
+          141,
+          59,
+          85
+        ],
+        [
+          324,
+          342,
+          31,
+          161
+        ],
+        [
+          232,
+          57,
+          102,
+          172
+        ],
+        [
+          108,
+          105,
+          64,
+          414
+        ]
+      ]
+    },
+    "LGBM_CLASS_WEIGHTED": {
+      "description": "LightGBM using inverse-frequency class weighting computed on training set",
+      "training_class_distribution": {
+        "COMPETENT": 7667,
+        "OVERCONFIDENT": 4001,
+        "NAIVE": 3224,
+        "UNDERCONFIDENT": 2629
+      },
+      "validation_metrics": {
+        "accuracy": 0.5546084176877997,
+        "macro_precision": 0.5176700697184718,
+        "macro_recall": 0.5291441141951547,
+        "macro_f1": 0.517764287290608,
+        "weighted_f1": 0.5671360789487945
+      },
+      "test_metrics": {
+        "accuracy": 0.5587217043941411,
+        "macro_precision": 0.5167061835908555,
+        "macro_recall": 0.5285854560799896,
+        "macro_f1": 0.5181774554422238,
+        "weighted_f1": 0.5692142146663016
+      },
+      "test_per_class_metrics": {
+        "COMPETENT": {
+          "precision": 0.7849702380952381,
+          "recall": 0.6421180766889836,
+          "f1": 0.7063943756277201
+        },
+        "OVERCONFIDENT": {
+          "precision": 0.4746760895170789,
+          "recall": 0.4696969696969697,
+          "f1": 0.4721734036321031
+        },
+        "UNDERCONFIDENT": {
+          "precision": 0.32088520055325037,
+          "recall": 0.41207815275310833,
+          "f1": 0.3608087091757387
+        },
+        "NAIVE": {
+          "precision": 0.4862932061978546,
+          "recall": 0.5904486251808972,
+          "f1": 0.5333333333333333
+        }
+      },
+      "test_confusion_matrix": [
+        [
+          1055,
+          265,
+          238,
+          85
+        ],
+        [
+          171,
+          403,
+          100,
+          184
+        ],
+        [
+          101,
+          68,
+          232,
+          162
+        ],
+        [
+          17,
+          113,
+          153,
+          408
+        ]
+      ]
+    },
+    "LGBM_RANDOM_OVERSAMPLING": {
+      "description": "LightGBM with Random Oversampling applied exclusively to training set",
+      "training_class_distribution": {
+        "OVERCONFIDENT": 7667,
+        "COMPETENT": 7667,
+        "UNDERCONFIDENT": 7667,
+        "NAIVE": 7667
+      },
+      "validation_metrics": {
+        "accuracy": 0.5578050079914758,
+        "macro_precision": 0.517696098116346,
+        "macro_recall": 0.5297866079297006,
+        "macro_f1": 0.5190523542496107,
+        "weighted_f1": 0.5689902816170588
+      },
+      "test_metrics": {
+        "accuracy": 0.5552596537949401,
+        "macro_precision": 0.5128259360594256,
+        "macro_recall": 0.5241970917378286,
+        "macro_f1": 0.5140547921726581,
+        "weighted_f1": 0.5658589688825539
+      },
+      "test_per_class_metrics": {
+        "COMPETENT": {
+          "precision": 0.7830609212481426,
+          "recall": 0.6415094339622641,
+          "f1": 0.7052525928404149
+        },
+        "OVERCONFIDENT": {
+          "precision": 0.471563981042654,
+          "recall": 0.46386946386946387,
+          "f1": 0.46768507638072854
+        },
+        "UNDERCONFIDENT": {
+          "precision": 0.31629834254143646,
+          "recall": 0.4067495559502664,
+          "f1": 0.35586635586635584
+        },
+        "NAIVE": {
+          "precision": 0.4803804994054697,
+          "recall": 0.5846599131693199,
+          "f1": 0.5274151436031331
+        }
+      },
+      "test_confusion_matrix": [
+        [
+          1054,
+          266,
+          240,
+          83
+        ],
+        [
+          172,
+          398,
+          91,
+          197
+        ],
+        [
+          101,
+          76,
+          229,
+          157
+        ],
+        [
+          19,
+          104,
+          164,
+          404
+        ]
+      ]
+    },
+    "LGBM_SMOTE": {
+      "description": "LightGBM with Standard SMOTE on One-Hot Encoded binary features",
+      "training_class_distribution": {
+        "OVERCONFIDENT": 7667,
+        "COMPETENT": 7667,
+        "UNDERCONFIDENT": 7667,
+        "NAIVE": 7667
+      },
+      "validation_metrics": {
+        "accuracy": 0.5788492274906766,
+        "macro_precision": 0.511236854196379,
+        "macro_recall": 0.4967703282441598,
+        "macro_f1": 0.49665104590156606,
+        "weighted_f1": 0.5630397682844916
+      },
+      "test_metrics": {
+        "accuracy": 0.5818908122503329,
+        "macro_precision": 0.5211610807619549,
+        "macro_recall": 0.5023896084564929,
+        "macro_f1": 0.5003588677908128,
+        "weighted_f1": 0.5634721765259542
+      },
+      "test_per_class_metrics": {
+        "COMPETENT": {
+          "precision": 0.6753980482794042,
+          "recall": 0.8003651856360317,
+          "f1": 0.7325905292479109
+        },
+        "OVERCONFIDENT": {
+          "precision": 0.514820592823713,
+          "recall": 0.38461538461538464,
+          "f1": 0.4402935290193462
+        },
+        "UNDERCONFIDENT": {
+          "precision": 0.41324921135646686,
+          "recall": 0.23268206039076378,
+          "f1": 0.29772727272727273
+        },
+        "NAIVE": {
+          "precision": 0.4811764705882353,
+          "recall": 0.5918958031837916,
+          "f1": 0.5308241401687216
+        }
+      },
+      "test_confusion_matrix": [
+        [
+          1315,
+          154,
+          84,
+          90
+        ],
+        [
+          317,
+          330,
+          30,
+          181
+        ],
+        [
+          211,
+          51,
+          131,
+          170
+        ],
+        [
+          104,
+          106,
+          72,
+          409
+        ]
+      ]
+    }
+  }
+}

@@ -20,4 +20,8 @@ public class AssessmentResultResponse {
     private double percentage;
     private String proficiencyLevel;
     private String calculatedAt;
+    private String mlArchetype;
+    private String mlModelVersion;
+    private String mlPredictedAt;
+    private java.util.Map<String, Double> mlProbabilities;
 }

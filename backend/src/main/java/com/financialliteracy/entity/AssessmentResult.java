@@ -35,6 +35,19 @@ public class AssessmentResult {
     @Column(name = "calculated_at", nullable = false, updatable = false)
     private Instant calculatedAt;
 
+    @Enumerated(EnumType.STRING)
+    @Column(name = "ml_archetype", length = 50)
+    private com.financialliteracy.enums.MlArchetype mlArchetype;
+
+    @Column(name = "ml_model_version", length = 50)
+    private String mlModelVersion;
+
+    @Column(name = "ml_predicted_at")
+    private Instant mlPredictedAt;
+
+    @Column(name = "ml_probabilities_json", columnDefinition = "TEXT")
+    private String mlProbabilitiesJson;
+
     @PrePersist
     protected void onCreate() {
         if (this.calculatedAt == null) {

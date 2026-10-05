@@ -1,0 +1,35 @@
+{
+  "model": "Phase 6B Hyperparameter-Optimized Class-Weighted LightGBM",
+  "classes": [
+    "COMPETENT",
+    "OVERCONFIDENT",
+    "UNDERCONFIDENT",
+    "NAIVE"
+  ],
+  "confusion_matrix": [
+    [
+      1065,
+      272,
+      223,
+      83
+    ],
+    [
+      170,
+      408,
+      91,
+      189
+    ],
+    [
+      106,
+      68,
+      238,
+      151
+    ],
+    [
+      21,
+      112,
+      151,
+      407
+    ]
+  ]
+}

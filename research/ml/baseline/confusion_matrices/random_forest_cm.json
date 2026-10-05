@@ -1,0 +1,35 @@
+{
+  "model": "Random Forest",
+  "classes": [
+    "COMPETENT",
+    "OVERCONFIDENT",
+    "UNDERCONFIDENT",
+    "NAIVE"
+  ],
+  "confusion_matrix": [
+    [
+      1415,
+      114,
+      13,
+      101
+    ],
+    [
+      406,
+      281,
+      11,
+      160
+    ],
+    [
+      303,
+      64,
+      30,
+      166
+    ],
+    [
+      168,
+      112,
+      31,
+      380
+    ]
+  ]
+}

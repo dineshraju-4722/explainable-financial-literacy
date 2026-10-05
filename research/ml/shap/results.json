@@ -1,0 +1,310 @@
+{
+  "dataset_info": {
+    "raw_observations": 25539,
+    "valid_observations": 25030,
+    "test_sample_count": 3755,
+    "top75_orig_predictors_count": 75,
+    "top75_encoded_features_count": 503,
+    "class_ordering": [
+      "COMPETENT",
+      "OVERCONFIDENT",
+      "UNDERCONFIDENT",
+      "NAIVE"
+    ]
+  },
+  "shap_metadata": {
+    "shap_library_version": "0.52.0",
+    "tree_explainer_type": "shap.TreeExplainer",
+    "computation_duration_seconds": 3.11
+  },
+  "model_reference_metrics": {
+    "accuracy": 0.5619174434087882,
+    "macro_f1": 0.5205118320657207,
+    "weighted_f1": 0.5721325007308808,
+    "per_class_f1": {
+      "COMPETENT": 0.7079,
+      "OVERCONFIDENT": 0.491,
+      "UNDERCONFIDENT": 0.3615,
+      "NAIVE": 0.5216
+    }
+  },
+  "top10_global_shap_variables": [
+    "M1_1",
+    "A50A",
+    "J1",
+    "J8",
+    "A14",
+    "B14A_1",
+    "J43",
+    "J20",
+    "A5_2015",
+    "B60"
+  ],
+  "category_shap_summary": [
+    {
+      "category": "Financial Education & Self-Assessment",
+      "selected_variable_count": 3,
+      "total_category_shap": 0.34534499305157296,
+      "percentage_of_total_shap": 14.164041707264492
+    },
+    {
+      "category": "Financial Behavior & Money Management",
+      "selected_variable_count": 21,
+      "total_category_shap": 0.709468772005231,
+      "percentage_of_total_shap": 29.09827991970663
+    },
+    {
+      "category": "Demographics & Socioeconomics",
+      "selected_variable_count": 15,
+      "total_category_shap": 0.5487617214316401,
+      "percentage_of_total_shap": 22.50701202014316
+    },
+    {
+      "category": "Saving & Banking",
+      "selected_variable_count": 7,
+      "total_category_shap": 0.1885578642191721,
+      "percentage_of_total_shap": 7.73354618358178
+    },
+    {
+      "category": "Investing & Retirement",
+      "selected_variable_count": 9,
+      "total_category_shap": 0.25793320326013974,
+      "percentage_of_total_shap": 10.578918826598892
+    },
+    {
+      "category": "Credit & Debt Behavior",
+      "selected_variable_count": 17,
+      "total_category_shap": 0.343360016851714,
+      "percentage_of_total_shap": 14.082629536106905
+    },
+    {
+      "category": "Demographics & Geographics",
+      "selected_variable_count": 2,
+      "total_category_shap": 0.030084173905219506,
+      "percentage_of_total_shap": 1.2338777237129146
+    },
+    {
+      "category": "Insurance & Risk Protection",
+      "selected_variable_count": 1,
+      "total_category_shap": 0.01467039162745471,
+      "percentage_of_total_shap": 0.60169408288523
+    }
+  ],
+  "underconfident_top5_drivers": [
+    "M1_1",
+    "J1",
+    "B60",
+    "A50A",
+    "A21_2015"
+  ],
+  "individual_case_samples": [
+    {
+      "case_id": "COMPETENT_Case_1",
+      "test_sample_index": 1344,
+      "true_class": "COMPETENT",
+      "predicted_class": "COMPETENT",
+      "predicted_probabilities": {
+        "COMPETENT": 0.9794907961358293,
+        "OVERCONFIDENT": 0.0018454542288747202,
+        "UNDERCONFIDENT": 0.008064300402690289,
+        "NAIVE": 0.010599449232605489
+      },
+      "top_positive_shap_drivers": [
+        "M1_1 (+0.376)",
+        "A9 (+0.273)",
+        "A14 (+0.273)",
+        "M21_2_2015 (+0.232)",
+        "J20 (+0.231)"
+      ],
+      "top_negative_shap_drivers": [
+        "F2_2 (-0.020)",
+        "J9 (-0.017)",
+        "B31 (-0.016)",
+        "A40 (-0.016)",
+        "A7 (-0.012)"
+      ]
+    },
+    {
+      "case_id": "COMPETENT_Case_2",
+      "test_sample_index": 2497,
+      "true_class": "COMPETENT",
+      "predicted_class": "COMPETENT",
+      "predicted_probabilities": {
+        "COMPETENT": 0.9732923713033432,
+        "OVERCONFIDENT": 0.002477773739402886,
+        "UNDERCONFIDENT": 0.013699868028469302,
+        "NAIVE": 0.010529986928784426
+      },
+      "top_positive_shap_drivers": [
+        "M1_1 (+0.336)",
+        "A14 (+0.266)",
+        "J20 (+0.238)",
+        "J2 (+0.221)",
+        "M21_2_2015 (+0.197)"
+      ],
+      "top_negative_shap_drivers": [
+        "B14A_1 (-0.080)",
+        "A9 (-0.021)",
+        "A40 (-0.018)",
+        "J42_1 (-0.018)",
+        "B61 (-0.014)"
+      ]
+    },
+    {
+      "case_id": "OVERCONFIDENT_Case_1",
+      "test_sample_index": 303,
+      "true_class": "OVERCONFIDENT",
+      "predicted_class": "OVERCONFIDENT",
+      "predicted_probabilities": {
+        "COMPETENT": 0.0018260562953048118,
+        "OVERCONFIDENT": 0.45551719550644165,
+        "UNDERCONFIDENT": 0.5317545850001917,
+        "NAIVE": 0.010902163198061882
+      },
+      "top_positive_shap_drivers": [
+        "M1_1 (+0.395)",
+        "P61 (+0.223)",
+        "J3 (+0.174)",
+        "EA_1 (+0.158)",
+        "J43 (+0.151)"
+      ],
+      "top_negative_shap_drivers": [
+        "A50A (-0.132)",
+        "M20 (-0.040)",
+        "A11 (-0.036)",
+        "A8_2021 (-0.024)",
+        "J62 (-0.022)"
+      ]
+    },
+    {
+      "case_id": "OVERCONFIDENT_Case_2",
+      "test_sample_index": 1952,
+      "true_class": "OVERCONFIDENT",
+      "predicted_class": "OVERCONFIDENT",
+      "predicted_probabilities": {
+        "COMPETENT": 0.015584054218896673,
+        "OVERCONFIDENT": 0.45266524827091964,
+        "UNDERCONFIDENT": 0.5113225555475638,
+        "NAIVE": 0.020428141962619852
+      },
+      "top_positive_shap_drivers": [
+        "M1_1 (+0.524)",
+        "P61 (+0.300)",
+        "G35 (+0.127)",
+        "A50A (+0.121)",
+        "J32 (+0.106)"
+      ],
+      "top_negative_shap_drivers": [
+        "J43 (-0.203)",
+        "J20 (-0.069)",
+        "J2 (-0.054)",
+        "A7 (-0.051)",
+        "J42_1 (-0.037)"
+      ]
+    },
+    {
+      "case_id": "UNDERCONFIDENT_Case_1",
+      "test_sample_index": 149,
+      "true_class": "UNDERCONFIDENT",
+      "predicted_class": "UNDERCONFIDENT",
+      "predicted_probabilities": {
+        "COMPETENT": 0.12499274847584002,
+        "OVERCONFIDENT": 0.19265570526807463,
+        "UNDERCONFIDENT": 0.3353259365915374,
+        "NAIVE": 0.347025609664548
+      },
+      "top_positive_shap_drivers": [
+        "J62 (+0.188)",
+        "J1 (+0.124)",
+        "J33_40 (+0.117)",
+        "C4_2012 (+0.110)",
+        "A21_2015 (+0.090)"
+      ],
+      "top_negative_shap_drivers": [
+        "A50A (-0.150)",
+        "M1_1 (-0.112)",
+        "J2 (-0.072)",
+        "B31 (-0.069)",
+        "B60 (-0.062)"
+      ]
+    },
+    {
+      "case_id": "UNDERCONFIDENT_Case_2",
+      "test_sample_index": 1938,
+      "true_class": "UNDERCONFIDENT",
+      "predicted_class": "UNDERCONFIDENT",
+      "predicted_probabilities": {
+        "COMPETENT": 0.12089915590495795,
+        "OVERCONFIDENT": 0.26021168242342185,
+        "UNDERCONFIDENT": 0.3009951779194085,
+        "NAIVE": 0.31789398375221173
+      },
+      "top_positive_shap_drivers": [
+        "A4A_new_w (+0.121)",
+        "A21_2015 (+0.104)",
+        "B60 (+0.096)",
+        "G25_4 (+0.062)",
+        "B61 (+0.059)"
+      ],
+      "top_negative_shap_drivers": [
+        "J1 (-0.139)",
+        "M1_1 (-0.136)",
+        "A50A (-0.110)",
+        "J2 (-0.101)",
+        "J42_2 (-0.056)"
+      ]
+    },
+    {
+      "case_id": "NAIVE_Case_1",
+      "test_sample_index": 1270,
+      "true_class": "NAIVE",
+      "predicted_class": "NAIVE",
+      "predicted_probabilities": {
+        "COMPETENT": 0.029083874771751072,
+        "OVERCONFIDENT": 0.46489016134587,
+        "UNDERCONFIDENT": 0.04243950184631822,
+        "NAIVE": 0.46358646203606074
+      },
+      "top_positive_shap_drivers": [
+        "M1_1 (+0.389)",
+        "J1 (+0.249)",
+        "J41_3 (+0.199)",
+        "A8_2021 (+0.110)",
+        "C3_2012 (+0.109)"
+      ],
+      "top_negative_shap_drivers": [
+        "A50A (-0.084)",
+        "F2_3 (-0.046)",
+        "J64 (-0.037)",
+        "F2_2 (-0.033)",
+        "J60_1 (-0.023)"
+      ]
+    },
+    {
+      "case_id": "NAIVE_Case_2",
+      "test_sample_index": 1244,
+      "true_class": "NAIVE",
+      "predicted_class": "NAIVE",
+      "predicted_probabilities": {
+        "COMPETENT": 0.04773845486040911,
+        "OVERCONFIDENT": 0.45817699833520037,
+        "UNDERCONFIDENT": 0.05986290159920527,
+        "NAIVE": 0.43422164520518525
+      },
+      "top_positive_shap_drivers": [
+        "M1_1 (+0.312)",
+        "J1 (+0.211)",
+        "A50A (+0.144)",
+        "STATEQ (+0.122)",
+        "J41_3 (+0.118)"
+      ],
+      "top_negative_shap_drivers": [
+        "J63 (-0.080)",
+        "B61 (-0.070)",
+        "J60_1 (-0.057)",
+        "F2_6 (-0.046)",
+        "J4 (-0.041)"
+      ]
+    }
+  ]
+}
