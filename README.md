@@ -264,7 +264,7 @@ The assessment engine diagnoses strengths and weaknesses across 10 core personal
 │   │   ├── repository/           # Spring Data JPA repositories
 │   │   └── service/              # Assessment, Diagnostic, ML & Education engine logic
 │   ├── src/main/resources/
-│   │   ├── db/migration/         # Flyway schema & data seed migrations (V1-V5)
+│   │   ├── db/migration/         # Flyway schema & data seed migrations (V1-V6)
 │   │   └── application.yml       # Service configuration & ML bridge timeouts
 │   └── build.gradle              # Gradle build script & dependencies
 │
@@ -415,7 +415,7 @@ npm run dev
 ## 🧪 Research Roadmap & Completed Milestones
 
 - [x] **Phase 1 — Monorepo Architecture & Multi-Service Setup**
-- [x] **Phase 2 — Domain Model & PostgreSQL Relational Schema (Flyway V1–V5)**
+- [x] **Phase 2 — Domain Model & PostgreSQL Relational Schema (Flyway V1–V6)**
 - [x] **Phase 3 — Assessment & Dynamic Question Engine**
 - [x] **Phase 4A — FINRA NFCS Dataset Audit & Target Variable Definition**
 - [x] **Phase 5 — Baseline Supervised ML Experiments**
