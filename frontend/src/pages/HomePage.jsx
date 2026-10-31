@@ -7,7 +7,7 @@ import { Sparkles, Layers, BookOpen, ArrowRight, Play, Award } from 'lucide-reac
 
 const BACKEND_HEALTH_URL = import.meta.env.VITE_API_BASE_URL 
   ? `${import.meta.env.VITE_API_BASE_URL}/health`
-  : 'http://localhost:8080/api/health';
+  : 'http://localhost:8081/api/health';
 
 const ML_HEALTH_URL = import.meta.env.VITE_ML_SERVICE_BASE_URL
   ? `${import.meta.env.VITE_ML_SERVICE_BASE_URL}/health`

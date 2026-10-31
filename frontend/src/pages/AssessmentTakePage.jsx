@@ -4,6 +4,7 @@ import Navbar from '../components/common/Navbar';
 import LoadingSpinner from '../components/common/LoadingSpinner';
 import ErrorMessage from '../components/common/ErrorMessage';
 import assessmentApi from '../api/assessmentApi';
+import axiosClient from '../api/axiosClient';
 import { CheckCircle, HelpCircle, ArrowRight, Sparkles } from 'lucide-react';
 
 export default function AssessmentTakePage() {
@@ -23,8 +24,30 @@ export default function AssessmentTakePage() {
     setLoading(true);
     setError(null);
     try {
-      // 1. Initialize Assessment
-      const assessment = await assessmentApi.createAssessment(userId, 'INITIAL');
+      let activeUserId = userId;
+      let assessment;
+
+      try {
+        // 1. Attempt initializing assessment with current userId
+        assessment = await assessmentApi.createAssessment(activeUserId, 'INITIAL');
+      } catch (err) {
+        // If 404 User Not Found, create a fresh user and retry initialization
+        if (err.response?.status === 404) {
+          const userRes = await axiosClient.post('/users', {
+            name: 'Demo Student',
+            email: `demo.student.${Date.now()}@example.com`,
+            age: 22,
+            educationLevel: 'Undergraduate',
+            occupation: 'Student',
+          });
+          activeUserId = userRes.data.data.id;
+          setUserId(activeUserId);
+          assessment = await assessmentApi.createAssessment(activeUserId, 'INITIAL');
+        } else {
+          throw err;
+        }
+      }
+
       setAssessmentId(assessment.id);
 
       // 2. Fetch Questions

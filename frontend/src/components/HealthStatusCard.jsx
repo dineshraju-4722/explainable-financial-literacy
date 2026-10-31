@@ -77,7 +77,7 @@ export default function HealthStatusCard({ title, serviceName, data, loading, er
           {serviceName === 'ml-service' && data.models_status && (
             <div style={{ marginTop: '0.5rem', paddingTop: '0.5rem', borderTop: '1px solid rgba(255, 255, 255, 0.08)' }}>
               <div><strong>Models Pipeline Status:</strong> {data.models_status.trained ? 'Trained Artifacts Loaded' : 'Initialized (Awaiting Dataset)'}</div>
-              <div><strong>Supported Architectures:</strong> {data.models_status.available_models.join(', ')}</div>
+              <div><strong>Active Model Architecture:</strong> {data.models_status.active_model || (data.models_status.available_models ? data.models_status.available_models.join(', ') : 'LightGBM_TOP75_ClassWeighted')}</div>
             </div>
           )}
         </div>

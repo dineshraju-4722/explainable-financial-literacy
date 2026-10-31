@@ -4,6 +4,7 @@ import com.financialliteracy.dto.assessment.AssessmentResultResponse;
 import com.financialliteracy.entity.Assessment;
 import com.financialliteracy.entity.AssessmentResponse;
 import com.financialliteracy.entity.AssessmentResult;
+import com.financialliteracy.enums.MlArchetype;
 import com.financialliteracy.exception.BadRequestException;
 import com.financialliteracy.repository.AssessmentResponseRepository;
 import com.financialliteracy.repository.AssessmentResultRepository;
@@ -44,6 +45,7 @@ public class AssessmentScoringServiceImpl implements AssessmentScoringService {
         double totalScore = (double) correctAnswers;
         double percentage = (double) correctAnswers / totalQuestions * 100.0;
         String proficiencyLevel = deriveProficiencyLevel(percentage);
+        MlArchetype baselineArchetype = deriveBaselineArchetype(percentage);
 
         // Retrieve existing or create new AssessmentResult entity
         Optional<AssessmentResult> existingResultOpt = assessmentResultRepository.findByAssessmentId(assessment.getId());
@@ -55,6 +57,11 @@ public class AssessmentScoringServiceImpl implements AssessmentScoringService {
             result.setPercentage(percentage);
             result.setProficiencyLevel(proficiencyLevel);
             result.setCalculatedAt(Instant.now());
+            if (result.getMlArchetype() == null) {
+                result.setMlArchetype(baselineArchetype);
+                result.setMlModelVersion("1.0.0");
+                result.setMlPredictedAt(Instant.now());
+            }
         } else {
             result = AssessmentResult.builder()
                     .assessment(assessment)
@@ -62,6 +69,9 @@ public class AssessmentScoringServiceImpl implements AssessmentScoringService {
                     .percentage(percentage)
                     .proficiencyLevel(proficiencyLevel)
                     .calculatedAt(Instant.now())
+                    .mlArchetype(baselineArchetype)
+                    .mlModelVersion("1.0.0")
+                    .mlPredictedAt(Instant.now())
                     .build();
         }
 
@@ -75,6 +85,9 @@ public class AssessmentScoringServiceImpl implements AssessmentScoringService {
                 .percentage(savedResult.getPercentage())
                 .proficiencyLevel(savedResult.getProficiencyLevel())
                 .calculatedAt(savedResult.getCalculatedAt().toString())
+                .mlArchetype(savedResult.getMlArchetype() != null ? savedResult.getMlArchetype().name() : null)
+                .mlModelVersion(savedResult.getMlModelVersion())
+                .mlPredictedAt(savedResult.getMlPredictedAt() != null ? savedResult.getMlPredictedAt().toString() : null)
                 .build();
     }
 
@@ -85,6 +98,16 @@ public class AssessmentScoringServiceImpl implements AssessmentScoringService {
             return "INTERMEDIATE";
         } else {
             return "ADVANCED";
+        }
+    }
+
+    private MlArchetype deriveBaselineArchetype(double percentage) {
+        if (percentage < 40.0) {
+            return MlArchetype.NAIVE;
+        } else if (percentage < 70.0) {
+            return MlArchetype.UNDERCONFIDENT;
+        } else {
+            return MlArchetype.COMPETENT;
         }
     }
 }
